@@ -2,7 +2,6 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 
-
 time = [0]
 lapin = [1]
 renard = [2]
@@ -13,9 +12,8 @@ delta = 1
 gamma = 1
 
 step = 0.001
-
-
-
+csv = pd.read_csv("population.csv")
+print(csv)
 for _ in range(0, 100_000):
     new_value_time = time[-1] + step
     new_value_lapin = (lapin[-1] * (alpha - beta * renard[-1])) * step + lapin[-1]
